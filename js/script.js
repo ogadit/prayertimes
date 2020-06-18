@@ -1,3 +1,4 @@
+var apiKey = process.env.IP_API
 var app = new Vue({
   el: "#app",
   data: {
@@ -36,7 +37,7 @@ var app = new Vue({
     },
   },
   beforeMount() {
-    axios.get('http://ip-api.com/json/').then((a) => {
+    axios.get(`http://api.ipstack.com/check?access_key=${apiKey}&format=1`).then((a) => {
         this.city = a.data.city
         this.country = a.data.country
         this.refreshData()
