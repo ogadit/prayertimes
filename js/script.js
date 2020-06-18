@@ -1,4 +1,3 @@
-var apiKey = process.env.IP_API
 var app = new Vue({
   el: "#app",
   data: {
@@ -37,11 +36,10 @@ var app = new Vue({
     },
   },
   beforeMount() {
-    axios.get(`http://api.ipstack.com/check?access_key=${apiKey}&format=1`).then((a) => {
+    axios.get(`http://api.ipstack.com/check?access_key=2a203a29e28609059d800ef5bd97a954&format=1`).then((a) => {
         this.city = a.data.city
         this.country = a.data.country
         this.refreshData()
     })
   },
 });
-// https://api.aladhan.com/v1/timingsByCity?city=Karachi&country=Pakistan&method=1&school=1
