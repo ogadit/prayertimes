@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dev - 1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="menu-wrap">
+            <h1>Prayer Times</h1>
+            <h1 id="cityname">{{ city }}</h1>
+            <input type="checkbox" id="check">
+            <label for="check" id="checkBtn"><i class="fas fa-bars ma"></i></label>
+
+            <div class="menu">
+                <div>
+                    <div>
+                        <ul>
+                            <li><a href="#" class="navBtn">Home</a></li>
+                            <li><a href="#" class="navBtn" @click="showModal(true)">Change City</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header class="showcase">
+            <div class="container showcase-inner">
+                <table>
+                    <tr>
+                        <td style="text-align: center;" colspan="2">{{ date }}</td>
+                    </tr>
+                    <tr v-for="(time, key) in times" :key="key">
+                        <td>{{key}}</td>
+                        <td>{{time}}</td>
+                    </tr>
+                </table>
+            </div>
+        </header>
+        <div class="modal" v-if="showChangeCityModal">
+            <div id="changecityModal">
+                <h1>Change Location</h1>
+                <input type="text" v-model="city" placeholder="City Name">
+                <input type="text" v-model="country" placeholder="Country">
+                <button @click="refreshData()">Change</button>
+                <button @click="showModal(false)">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
