@@ -84,52 +84,14 @@ h1#cityname {
   margin-left: 20px;
 }
 
-.menu-wrap #check {
-  display: none;
-}
-
 .menu-wrap #checkBtn {
   display: block;
   float: right;
   margin-right: 20px;
   font-size: 2em;
+  line-height: 1.4;
 }
 
-.menu ul {
-  padding-top: 20px;
-}
-.menu ul li {
-  margin-bottom: 10px;
-}
-
-.navBtn {
-  text-decoration: none;
-  color: white;
-  font-size: 1.5rem;
-  background-color: var(--main-color);
-  padding: 5px 10px;
-  border-radius: 5px;
-  transition: background-color 0.2s linear;
-}
-
-.navBtn:hover {
-  background-color: blue;
-}
-.menu-wrap .menu {
-  display: block;
-  height: 100vh;
-  width: 100%;
-  text-align: center;
-  background: var(--main-color);
-  backdrop-filter: blur(10px);
-  position: fixed;
-  z-index: 2;
-  left: -100%;
-  transition: all 0.4s ease-in;
-}
-#check:checked ~ .menu {
-  left: 0;
-}
 
 .modal {
   /* display: none;
@@ -151,7 +113,12 @@ h1#cityname {
   height: 50vh;
   padding: 50px;
   text-align: center;
+  overflow: hidden;
   border-radius: 20px;
+}
+
+#changecityModal select,input[type=text] {
+  width: 50vw;
 }
 
 /* MOBILE FIX */
