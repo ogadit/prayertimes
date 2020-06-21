@@ -1,12 +1,12 @@
 :root {
-  --main-color: rgba(8, 66, 22, 0.301);
+  --main-color: rgba(51, 88, 77, 0.4);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -21,7 +21,7 @@ body {
 }
 
 .showcase {
-  background: var(--main-color);
+  background: rgba(0, 65, 14, 0.13);
   color: #fff;
   height: 100vh;
   position: relative;
@@ -52,8 +52,18 @@ body {
   width: 100%;
   padding: 10px;
   border-radius: 10px;
-
+  color: black;
   backdrop-filter: blur(10px);
+}
+
+table .table-header {
+  text-align: center;
+}
+
+.city {
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  font-size: 2.3rem;
 }
 
 .showcase-inner table tr td:nth-child(2) {
@@ -71,15 +81,10 @@ body {
   z-index: 4;
 }
 
-h1#cityname {
-  display: inline;
-  margin: 0;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
 
 .menu-wrap h1 {
+  font-family: 'Merriweather', serif;
+  font-weight: normal;
   display: inline-block;
   margin-left: 20px;
 }
@@ -88,7 +93,7 @@ h1#cityname {
   display: block;
   float: right;
   margin-right: 20px;
-  font-size: 2em;
+  font-size: 2rem;
   line-height: 1.4;
 }
 
@@ -123,6 +128,9 @@ h1#cityname {
 
 /* MOBILE FIX */
 @media (max-width: 480px) {
+  .showcase-inner table {
+    font-size: 1.5rem;
+  }
   h1 {
     font-size: 1.4rem;
     line-height: 2;
@@ -130,9 +138,12 @@ h1#cityname {
   .menu-wrap > h1 {
     margin-left: 5px;
   }
-  .menu-wrap #cityname {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  
+}
+
+@media (max-width: 375px) {
+  .menu-wrap h1, .menu-wrap {
+    font-size: 1.6rem;
+    line-height: 3;
   }
 }
