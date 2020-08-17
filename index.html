@@ -32,13 +32,13 @@
                 </table>
             </div>
         </header>
-        <div class="modal" v-if="showChangeCityModal">
+        <div @keyup.ctrl.83="refreshData()" class="modal" v-if="showChangeCityModal">
             <div id="changecityModal">
                 <h1>Settings</h1>
                 <label for="city">City:</label><br>
                 <input type="text" name="city" v-model="city" placeholder="City Name"><br>
                 <label for="country">Country:</label><br>
-                <input type="text" name="country" v-model="country" placeholder="Country"><br>
+                <input  type="text" name="country" v-model="country" placeholder="Country"><br>
                 <label for="method">Method:</label><br>
                 <select name="method" v-model="method">
                     <option v-for="(name, key) in methodList" :key="key" :value="key">{{name}}</option>
@@ -47,8 +47,7 @@
                 <select name="school" v-model="school">
                     <option v-for="(name, key) in schoolList" :key="key" :value="key">{{name}}</option>
                 </select><br>
-                <button @click="refreshData()">Change</button>
-                <button @click="showModal(false)">Close</button>
+                <button @click="refreshData()">Close</button>
             </div>
         </div>
     </div>
